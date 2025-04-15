@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "E-commerce Website",
+    "startDate": "01/04/2025",
+    "description": "A fully responsive e-commerce platform built with React and Node.js.",
+    "image": "https://via.placeholder.com/300x200?text=E-commerce",
+    "types": ["React", "Node.js", "MongoDB"]
+  },
+  {
+    "id": 2,
+    "name": "Task Manager App",
+    "startDate": "05/04/2025",
+    "description": "A productivity app for task tracking and team collaboration.",
+    "image": "https://via.placeholder.com/300x200?text=Task+Manager",
+    "types": ["Vue.js", "Firebase"]
+  },
+  {
+    "id": 3,
+    "name": "Portfolio Website",
+    "startDate": "10/03/2025",
+    "description": "Personal portfolio website to showcase projects and skills.",
+    "image": "https://via.placeholder.com/300x200?text=Portfolio",
+    "types": ["HTML", "CSS", "JavaScript"]
+  },
+  {
+    "id": 4,
+    "name": "Blog Platform",
+    "startDate": "15/03/2025",
+    "description": "A full-featured blog platform with admin and user dashboard.",
+    "image": "https://via.placeholder.com/300x200?text=Blog",
+    "types": ["Node.js", "Express", "EJS", "MySQL"]
+  },
+  {
+    "id": 5,
+    "name": "Crypto Tracker",
+    "startDate": "20/03/2025",
+    "description": "Live crypto price tracker with historical chart view.",
+    "image": "https://via.placeholder.com/300x200?text=Crypto",
+    "types": ["React", "Chart.js", "REST API"]
+  },
+  {
+    "id": 6,
+    "name": "Weather Forecast App",
+    "startDate": "22/03/2025",
+    "description": "Real-time weather updates using OpenWeatherMap API.",
+    "image": "https://via.placeholder.com/300x200?text=Weather",
+    "types": ["React", "TypeScript", "API"]
+  },
+  {
+    "id": 7,
+    "name": "Social Media Clone",
+    "startDate": "25/03/2025",
+    "description": "A simplified clone of Instagram for learning fullstack dev.",
+    "image": "https://via.placeholder.com/300x200?text=Social+Clone",
+    "types": ["Next.js", "MongoDB", "TailwindCSS"]
+  },
+  {
+    "id": 8,
+    "name": "Admin Dashboard",
+    "startDate": "28/03/2025",
+    "description": "Dashboard with analytics, recent orders, and product management.",
+    "image": "https://via.placeholder.com/300x200?text=Dashboard",
+    "types": ["React", "Bootstrap", "Recharts"]
+  },
+  {
+    "id": 9,
+    "name": "Chat App",
+    "startDate": "30/03/2025",
+    "description": "Realtime chat application with socket.io integration.",
+    "image": "https://via.placeholder.com/300x200?text=Chat+App",
+    "types": ["React", "Socket.io", "Node.js"]
+  },
+  {
+    "id": 10,
+    "name": "Expense Tracker",
+    "startDate": "01/04/2025",
+    "description": "Track personal expenses with charts and summaries.",
+    "image": "https://via.placeholder.com/300x200?text=Expense+Tracker",
+    "types": ["Vue.js", "Chart.js", "LocalStorage"]
+  }
+]

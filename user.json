@@ -1,0 +1,11 @@
+{
+  "_id": { "$oid": "661bfa1ccf1c5c6f0e123abc" },
+  "name": "Lunaria",
+  "age": 20,
+  "address": "Tokyo, Japan",
+  "phone": "+81 123 456 789",
+  "email": "dieulnhpd10372@example.com",
+  "about": "I'm a passionate frontend developer who loves building beautiful UIs in pink!",
+  "image": "https://cellphones.com.vn/sforum/wp-content/uploads/2024/01/avartar-anime-6.jpg",
+  "cvLink": "https://drive.google.com/file/d/your-cv-id/view?usp=sharing"
+}

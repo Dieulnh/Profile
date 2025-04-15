@@ -1,0 +1,125 @@
+<!-- Projects Section -->
+<section id="projects" class="max-w-6xl mx-auto mt-16">
+  <div class="text-center mb-12">
+    <h2 class="text-3xl font-bold text-gray-800">Projects Completed : {{ projects.length }}</h2>
+    <p class="text-gray-600 mt-2 max-w-2xl mx-auto">
+      A selection of projects I've completed using various technologies
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div *ngFor="let project of projects"
+      class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+      <img class="w-full h-48 object-cover" [src]="project.image" [alt]="project.name">
+      <div class="p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ project.name }}</h3>
+        <p class="text-gray-600 mb-2 text-sm">Start Date: {{ project.startDate }}</p>
+        <p class="text-gray-600 mb-4">{{ project.description }}</p>
+        <div class="flex flex-wrap gap-2 mb-4">
+          <span *ngFor="let type of project.types" class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">{{
+            type }}</span>
+        </div>
+        <a href="#" class="text-pink-500 hover:text-pink-700 font-medium">View Project →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-12">
+    <a href="../project"
+      class="inline-flex items-center px-6 py-3 border border-pink-500 text-pink-500 rounded-lg hover:bg-pink-50 transition duration-300">
+      See All Projects <i class="fas fa-arrow-right ml-2"></i>
+    </a>
+  </div>
+</section>
+
+
+<!-- Education Section -->
+<section id="education" class="max-w-6xl mx-auto mt-16 bg-white rounded-2xl shadow-lg overflow-hidden"
+  *ngIf="education">
+  <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+    <div class="p-8 hover:bg-gray-50 transition duration-300">
+      <div class="flex items-start">
+        <div class="bg-pink-500/10 p-4 rounded-lg text-pink-500 mr-6">
+          <i class="fas fa-graduation-cap text-2xl"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-gray-800">{{ education.school }}</h3>
+          <p class="text-gray-600 mt-2 flex items-center">
+            <i class="fas fa-book-open mr-2 text-pink-500"></i> Major: {{ education.major }}
+          </p>
+          <p class="text-gray-600 mt-1 flex items-center">
+            <i class="fas fa-calendar-alt mr-2 text-pink-500"></i> Graduation: {{ education.graduation }}
+          </p>
+          <p class="text-gray-600 mt-1 flex items-center">
+            <i class="fas fa-star mr-2 text-pink-500"></i> GPA: {{ education.gpa }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact"
+  class="max-w-6xl mx-auto mt-16 bg-gradient-to-r from-pink-500 to-pink-600 rounded-2xl p-8 md:p-12 text-white">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">Have a project to discuss? </h2>
+      <p class="mb-6 text-white/90">I'm always open to new collaboration opportunities. Feel free to reach out if you
+        need a dedicated and creative Frontend Developer.</p>
+      <a href="/contact"
+        class="inline-flex items-center px-6 py-3 bg-white text-pink-600 rounded-lg font-medium hover:bg-gray-100 transition">
+        <i class="fas fa-envelope mr-2"></i> Send Email Now
+      </a>
+    </div>
+    <div class="text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/3059/3059518.png" alt="Contact"
+        class="w-48 h-48 mx-auto animate-float">
+    </div>
+  </div>
+</section>
+
+<!-- Tailwind CSS Configuration -->
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#EC4899',      // pink-500
+          secondary: '#F9A8D4',    // light pink
+          dark: '#9D174D',         // darker pink
+        },
+        animation: {
+          'float': 'float 6s ease-in-out infinite',
+          'float-reverse': 'float-reverse 5s ease-in-out infinite',
+          'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-15px)' },
+          },
+          'float-reverse': {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(10px)' },
+          }
+        }
+      }
+    }
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeIn');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+</script>

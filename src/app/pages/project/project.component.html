@@ -1,0 +1,156 @@
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-white">
+  <div class="container mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">My Projects: {{projects.length}} </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <div
+      *ngFor="let project of projects"
+        class="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-xl">
+        <img class="w-full h-48 object-cover"
+          [src]="project.image" [alt]="project.name">
+        <div class="p-6">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ project.name }}</h3>
+                <p class="text-gray-600 mb-2 text-sm">Start Date: {{ project.startDate }}</p>
+                <p class="text-gray-600 mb-4">{{ project.description }}</p>
+                  <span *ngFor="let type of project.types" class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">
+                    {{ type }}
+    </span>
+    <br>
+          <a href="#" class="text-pink-500 hover:text-pink-700 font-medium">View Project →</a>
+        </div>
+      </div>
+
+
+
+  </div>
+<!-- About Section -->
+<div class="bg-pink-50 text-gray-800 min-h-screen">
+  <div class="container mx-auto px-4 py-16 sm:py-24 flex flex-col md:flex-row items-center justify-center gap-12">
+
+    <!-- Profile Image -->
+    <div class="relative group md:w-1/2 flex justify-center" *ngIf="user">
+      <div class="relative">
+        <div
+          class="border-4 border-pink-400 rounded-2xl p-1.5 inline-block transform group-hover:rotate-1 transition duration-300 shadow-lg">
+          <img [src]="user.image" alt="Profile" class="w-72 h-72 sm:w-80 sm:h-80 object-cover rounded-xl">
+        </div>
+
+        <!-- Decorative Elements -->
+        <div
+          class="absolute -top-4 -left-4 w-16 h-16 bg-pink-300 rounded-full opacity-20 group-hover:opacity-30 transition duration-500">
+        </div>
+        <div
+          class="absolute -bottom-4 -right-4 w-24 h-24 bg-rose-300 rounded-full opacity-20 group-hover:opacity-30 transition duration-500">
+        </div>
+        <div
+          class="absolute top-1/2 -right-8 w-8 h-8 bg-fuchsia-300 rounded-full opacity-0 group-hover:opacity-20 transition duration-700">
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Info -->
+    <div *ngIf="user" class="md:w-1/2 space-y-6">
+      <!-- Title -->
+      <div class="relative inline-block group">
+        <h2 class="text-4xl sm:text-5xl font-extrabold text-pink-500">
+          ABOUT <span class="text-gray-800">ME</span>
+        </h2>
+        <div
+          class="absolute -bottom-2 left-0 w-full h-1 bg-pink-400 transform scale-x-0 group-hover:scale-x-100 origin-left transition duration-500">
+        </div>
+      </div>
+
+      <!-- About Text -->
+      <p class="text-gray-600 text-lg leading-relaxed max-w-lg">
+        {{ user.about }}
+      </p>
+
+      <!-- Personal Info -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+        <div
+          class="flex items-center space-x-3 p-3 bg-white rounded-lg hover:bg-pink-100 transition duration-300 border border-pink-200">
+          <div class="bg-pink-100 p-2 rounded-full"><i class="fas fa-user text-pink-600"></i></div>
+          <div>
+            <p class="text-sm text-gray-500">Name</p>
+            <p class="font-medium text-gray-800">{{ user.name }}</p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center space-x-3 p-3 bg-white rounded-lg hover:bg-pink-100 transition duration-300 border border-pink-200">
+          <div class="bg-rose-100 p-2 rounded-full"><i class="fas fa-calendar-alt text-rose-600"></i></div>
+          <div>
+            <p class="text-sm text-gray-500">Age</p>
+            <p class="font-medium text-gray-800">{{ user.age }} years old</p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center space-x-3 p-3 bg-white rounded-lg hover:bg-pink-100 transition duration-300 border border-pink-200">
+          <div class="bg-fuchsia-100 p-2 rounded-full"><i class="fas fa-map-marker-alt text-fuchsia-600"></i></div>
+          <div>
+            <p class="text-sm text-gray-500">Address</p>
+            <p class="font-medium text-gray-800">{{ user.address }}</p>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center space-x-3 p-3 bg-white rounded-lg hover:bg-pink-100 transition duration-300 border border-pink-200">
+          <div class="bg-pink-200 p-2 rounded-full"><i class="fas fa-phone text-pink-600"></i></div>
+          <div>
+            <p class="text-sm text-gray-500">Phone</p>
+            <p class="font-medium text-gray-800">{{ user.phone }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div
+        class="flex items-center space-x-3 p-3 bg-white rounded-lg mt-4 hover:bg-pink-100 transition duration-300 border border-pink-200">
+        <div class="bg-pink-100 p-2 rounded-full"><i class="fas fa-envelope text-pink-600"></i></div>
+        <div>
+          <p class="text-sm text-gray-500">Email</p>
+          <p class="font-medium text-gray-800">{{ user.email }}</p>
+        </div>
+      </div>
+
+      <!-- Download CV Button -->
+      <div class="mt-8">
+        <a [href]="user.cvLink" target="_blank"
+          class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-pink-400 to-pink-500 text-white font-bold rounded-full shadow-md hover:shadow-lg hover:from-pink-500 hover:to-pink-600 transition duration-300 transform hover:-translate-y-1">
+          <i class="fas fa-download mr-2"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu Script -->
+<script>
+  const btn = document.querySelector("button.mobile-menu-button");
+  const menu = document.querySelector(".mobile-menu");
+
+  btn.addEventListener("click", () => {
+    menu.classList.toggle("hidden");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll('.mobile-menu a').forEach(item => {
+    item.addEventListener('click', () => {
+      menu.classList.add('hidden');
+    });
+  });
+
+  // Smooth scrolling for all links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>

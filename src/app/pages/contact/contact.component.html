@@ -1,0 +1,34 @@
+<div class="flex min-h-screen items-center justify-center bg-pink-100 p-6">
+  <div class="max-w-4xl w-full bg-white rounded-3xl shadow-lg flex overflow-hidden">
+    <!-- Contact Form -->
+    <div class="w-1/2 p-8">
+      <h2 class="text-3xl font-extrabold text-pink-600 mb-6">Contact Me</h2>
+      <p class="text-gray-600 mb-4">Leave your details and I'll get back to you soon!</p>
+      <form class="space-y-4" (ngSubmit)="submitForm(contactForm)" #contactForm="ngForm">
+        <div class="grid grid-cols-2 gap-4">
+          <input id="firstName" type="text" [(ngModel)]="formData.firstName" name="firstName" required
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-400">
+          <input id="lastName" type="text" [(ngModel)]="formData.lastName" name="lastName" required
+            class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-400">
+        </div>
+        <input id="email" type="email" [(ngModel)]="formData.email" name="email" required
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-400">
+        <textarea id="message" [(ngModel)]="formData.message" name="message" required
+          placeholder="Your Message"
+          class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-pink-400"></textarea>
+
+        <button type="submit"
+          class="w-full py-3 bg-pink-500 text-white rounded-lg font-semibold shadow-md hover:bg-pink-600 transition duration-300">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <!-- Image Section -->
+    <div class="w-1/2 relative bg-pink-200 flex items-center justify-center">
+      <img
+        src="https://www.tia.org.za/storage/2023/12/contact-us.jpg"
+        alt="Contact Image" class="w-4/5 h-auto rounded-xl shadow-lg">
+    </div>
+  </div>
+</div>
